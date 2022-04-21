@@ -14,7 +14,7 @@ exports.config = {
       deviceName: "iPhone 13 Pro",
       platformVersion: "15",
       platformName: "iOS",
-      app: "lt://APP100202491650463745066369",
+      app: "YOUR_APP_URL", //Set your APP URL
     },
   ],
 
