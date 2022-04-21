@@ -3,26 +3,18 @@ exports.config = {
   key: process.env.LT_ACCESS_KEY || "YOUR_ACCESS_KEY",
 
   updateJob: false,
-  specs: ["./../tests/sample-test.js"],
+  specs: ["./../specs/android-test.js"],
   exclude: [],
-
-  commonCapabilities: {
-    build: "WebdriverIO Sample [Parallel]",
-    name: "Parallel-Test-Sample",
-    isRealMobile: true,
-    app: "YOUR_APP_URL",
-  },
 
   capabilities: [
     {
+      build: "NodeJS WebDriverIO Android",
+      name: "Sample Test - WebDriverIO",
+      isRealMobile: true,
       platformName: "Android",
       deviceName: "Galaxy S9",
       platformVersion: "10",
-    },
-    {
-      platformName: "Android",
-      deviceName: "Galaxy S9 Plus",
-      platformVersion: "10",
+      app: "lt://APP100202491650524743486667",
     },
   ],
 
@@ -43,8 +35,3 @@ exports.config = {
     timeout: 20000,
   },
 };
-
-exports.config.capabilities.forEach(function (caps) {
-  for (var i in exports.config.commonCapabilities)
-    caps[i] = caps[i] || exports.config.commonCapabilities[i];
-});

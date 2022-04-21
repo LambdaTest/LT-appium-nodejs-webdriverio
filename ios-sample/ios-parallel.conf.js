@@ -3,15 +3,15 @@ exports.config = {
   key: process.env.LT_ACCESS_KEY || "YOUR_ACCESS_KEY",
 
   updateJob: false,
-  specs: ["./../tests/sample-test.js"],
+  specs: ["./../specs/ios-test.js"],
   exclude: [],
 
   maxInstances: 10,
   commonCapabilities: {
-    build: "WebdriverIO Sample [Parallel]",
-    name: "Parallel-Test-Sample",
+    build: "NodeJS WebdriverIO iOS",
+    name: "Sample Parallel Test - WebDriverIO",
     isRealMobile: true,
-    app: "YOUR_APP_URL",
+    app: "lt://APP100202491650463745066369",
   },
 
   capabilities: [

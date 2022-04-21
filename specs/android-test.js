@@ -42,7 +42,7 @@ describe("Proverbial APK", () => {
   });
 
   it("Browser", async () => {
-    var browser = await $("~Browser");
+    var browser = await $("id=webview");
     await browser.waitForDisplayed({ timeout: 30000 });
     await browser.click();
 

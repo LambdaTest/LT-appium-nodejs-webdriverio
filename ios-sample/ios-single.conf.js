@@ -3,18 +3,18 @@ exports.config = {
   key: process.env.LT_ACCESS_KEY || "YOUR_ACCESS_KEY",
 
   updateJob: false,
-  specs: ["./../tests/sample-test.js"],
+  specs: ["./../specs/ios-test.js"],
   exclude: [],
 
   capabilities: [
     {
-      build: "WebDriverIO Sample Build",
-      name: "WebDriverIO Test",
+      build: "NodeJS WebDriverIO iOS",
+      name: "Sample Test - WebDriverIO",
       isRealMobile: true,
       deviceName: "iPhone 13 Pro",
       platformVersion: "15",
       platformName: "iOS",
-      app: "YOUR_APP_URL",
+      app: "lt://APP100202491650463745066369",
     },
   ],
 
