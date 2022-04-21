@@ -10,7 +10,7 @@ exports.config = {
     build: "NodeJS WebdriverIO Android",
     name: "Sample Parallel Test - WebDriverIO",
     isRealMobile: true,
-    app: "lt://APP100202491650524743486667L",
+    app: "YOUR_APP_URL",
   },
 
   capabilities: [
