@@ -55,7 +55,7 @@ export LT_ACCESS_KEY="${ YOUR_LAMBDATEST_ACCESS_KEY()}`}"
 
 **For Windows:**
 
-  {`set LT_USERNAME="${ YOUR_LAMBDATEST_USERNAME()}" \`
+  {`set LT_USERNAME="${ YOUR_LAMBDATEST_USERNAME()}" \
 set LT_ACCESS_KEY="${ YOUR_LAMBDATEST_ACCESS_KEY()}`}"
  
 ### Upload Your Application
