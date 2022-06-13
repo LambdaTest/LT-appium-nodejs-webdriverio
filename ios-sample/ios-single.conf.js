@@ -14,12 +14,10 @@ exports.config = {
       deviceName: "iPhone 13 Pro",
       platformVersion: "15",
       platformName: "iOS",
-      app: "YOUR_APP_URL", //Set your APP URL
+      
+      //Enter the Custom_ID here that was used to upload your application
 
-      // ADD THE APP URL OF OTHER APPS THAT YOU'D LIKE TO INSTALL ON THE SAME DEVICE
-
-      otherApps: "['lt:// ', 'lt:// ']"   //ENTER THE OTHER APP URLs HERE IN AN ARRAY FORMAT
-
+      app: 'ENTER_CUSTOM_ID_HERE', //Enter the app_url here
     },
   ],
 
