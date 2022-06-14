@@ -21,17 +21,17 @@
 &emsp;
 &emsp;
 
-*WebdriverIO is a framework for automating web and mobile applications. It makes it easier to interact with your app, and provides a set of plugins that help you create a scalable, robust and stable test suite. Perform [WebDriverIO tests on LambdaTest's online cloud.](https://www.lambdatest.com/appium-mobile-testing).*
+_WebdriverIO is a framework for automating web and mobile applications. It makes it easier to interact with your app, and provides a set of plugins that help you create a scalable, robust and stable test suite. Perform [WebDriverIO tests on LambdaTest's online cloud.](https://www.lambdatest.com/appium-mobile-testing)._
 
-*Learn the basics of [Appium testing on the LambdaTest platform](https://www.lambdatest.com/support/docs/getting-started-with-appium-testing/).*
+_Learn the basics of [Appium testing on the LambdaTest platform](https://www.lambdatest.com/support/docs/getting-started-with-appium-testing/)._
 
 [<img height="53" width="200" src="https://user-images.githubusercontent.com/70570645/171866795-52c11b49-0728-4229-b073-4b704209ddde.png">](https://accounts.lambdatest.com/register)
 
 ## Table of Contents
 
-* [Pre-requisites](#pre-requisites)
-* [Run Your First Test](#run-your-first-test)
-* [Executing The Tests](#executing-the-tests)
+- [Pre-requisites](#pre-requisites)
+- [Run Your First Test](#run-your-first-test)
+- [Executing The Tests](#executing-the-tests)
 
 ## Pre-requisites
 
@@ -69,7 +69,7 @@ export LT_ACCESS_KEY="YOUR_LAMBDATEST_ACCESS_KEY"
 set LT_USERNAME="YOUR_LAMBDATEST_USERNAME" `
 set LT_ACCESS_KEY="YOUR_LAMBDATEST_ACCESS_KEY"
 ```
- 
+
 ### Upload Your Application
 
 Upload your **_iOS_** application (.ipa file) or **_android_** application (.apk file) to the LambdaTest servers using our **REST API**. You need to provide your **Username** and **AccessKey** in the format `Username:AccessKey` in the **cURL** command for authentication. Make sure to add the path of the **appFile** in the cURL request. Here is an example cURL request to upload your app using our REST API:
@@ -82,7 +82,7 @@ Upload your **_iOS_** application (.ipa file) or **_android_** application (.apk
 curl -u "YOUR_LAMBDATEST_USERNAME:YOUR_LAMBDATEST_ACCESS_KEY" \
 --location --request POST 'https://manual-api.lambdatest.com/app/upload/realDevice' \
 --form 'name="Android_App"' \
---form 'appFile=@"/Users/macuser/Downloads/proverbial_android.apk"' 
+--form 'appFile=@"/Users/macuser/Downloads/proverbial_android.apk"'
 ```
 
 **For Windows:**
@@ -227,16 +227,18 @@ exports.config = {
 
 ## Executing The Tests
 
-<Tabs className="docs__val">
-
-<TabItem value="ios" label="iOS" default>
-
-If you are using an **iOS** app, the cURL command will generate an app URL for the corresponding iOS app and install the same for running the tests. You can either use our sample :link: [iOS app](https://prod-mobile-artefacts.lambdatest.com/assets/docs/proverbial_ios.ipa) or upload your own app as discussed earlier.
-
 **Step-5:** Navigate to the corresponding directory based on your app.
 
+**Android:**
+
 ```bash
-cd ios
+cd android-sample
+```
+
+**IOS:**
+
+```bash
+cd ios-sample
 ```
 
 Install the required dependencies using the following command:
@@ -247,37 +249,17 @@ npm i
 
 Execute the following command to run your test on LambdaTest platform:
 
-```bash
-npm run single
-```
-
-</TabItem>
-
-<TabItem value="android" label="Android" default>
-
-If you are using an **android** app, the cURL command will generate an app URL for the corresponding Android app and install the same for running the tests. You can either use our sample :link: [Android app](https://prod-mobile-artefacts.lambdatest.com/assets/docs/proverbial_android.apk) or upload your own app as discussed earlier.
-
-Navigate to the corresponding directory based on your app.
-
-```bash
-cd android
-```
-
-Install the required dependencies using the following command:
-
-```bash
-npm i
-```
-
-Execute the following command to run your test on LambdaTest platform:
+**Single:**
 
 ```bash
 npm run single
 ```
 
-</TabItem>
+**Parallel:**
 
-</Tabs>
+```bash
+npm run parallel
+```
 
 **Info:** Your test results would be displayed on the test console (or command-line interface if you are using terminal/cmd) and on the :link: [LambdaTest App Automation Dashboard](https://appautomation.lambdatest.com/build).
 
@@ -289,12 +271,11 @@ npm run single
 
 ## Documentation & Resources :books:
 
-      
 Visit the following links to learn more about LambdaTest's features, setup and tutorials around test automation, mobile app testing, responsive testing, and manual testing.
 
-* [LambdaTest Documentation](https://www.lambdatest.com/support/docs/?utm_source=github&utm_medium=repo&utm_campaign=LT-appium-nodejs-webdriverio)
-* [LambdaTest Blog](https://www.lambdatest.com/blog/?utm_source=github&utm_medium=repo&utm_campaign=LT-appium-nodejs-webdriverio)
-* [LambdaTest Learning Hub](https://www.lambdatest.com/learning-hub/?utm_source=github&utm_medium=repo&utm_campaign=LT-appium-nodejs-webdriverio)    
+- [LambdaTest Documentation](https://www.lambdatest.com/support/docs/?utm_source=github&utm_medium=repo&utm_campaign=LT-appium-nodejs-webdriverio)
+- [LambdaTest Blog](https://www.lambdatest.com/blog/?utm_source=github&utm_medium=repo&utm_campaign=LT-appium-nodejs-webdriverio)
+- [LambdaTest Learning Hub](https://www.lambdatest.com/learning-hub/?utm_source=github&utm_medium=repo&utm_campaign=LT-appium-nodejs-webdriverio)
 
 ## LambdaTest Community :busts_in_silhouette:
 
@@ -302,31 +283,30 @@ The [LambdaTest Community](https://community.lambdatest.com/) allows people to i
 
 ## What's New At LambdaTest ❓
 
-To stay updated with the latest features and product add-ons, visit [Changelog](https://changelog.lambdatest.com/) 
-      
+To stay updated with the latest features and product add-ons, visit [Changelog](https://changelog.lambdatest.com/)
+
 ## About LambdaTest
 
-[LambdaTest](https://www.lambdatest.com) is a leading test execution and orchestration platform that is fast, reliable, scalable, and secure. It allows users to run both manual and automated testing of web and mobile apps across 3000+ different browsers, operating systems, and real device combinations. Using LambdaTest, businesses can ensure quicker developer feedback and hence achieve faster go to market. Over 500 enterprises and 1 Million + users across 130+ countries rely on LambdaTest for their testing needs.    
+[LambdaTest](https://www.lambdatest.com) is a leading test execution and orchestration platform that is fast, reliable, scalable, and secure. It allows users to run both manual and automated testing of web and mobile apps across 3000+ different browsers, operating systems, and real device combinations. Using LambdaTest, businesses can ensure quicker developer feedback and hence achieve faster go to market. Over 500 enterprises and 1 Million + users across 130+ countries rely on LambdaTest for their testing needs.
 
 ### Features
 
-* Run Selenium, Cypress, Puppeteer, Playwright, and Appium automation tests across 3000+ real desktop and mobile environments.
-* Real-time cross browser testing on 3000+ environments.
-* Test on Real device cloud
-* Blazing fast test automation with HyperExecute
-* Accelerate testing, shorten job times and get faster feedback on code changes with Test At Scale.
-* Smart Visual Regression Testing on cloud
-* 120+ third-party integrations with your favorite tool for CI/CD, Project Management, Codeless Automation, and more.
-* Automated Screenshot testing across multiple browsers in a single click.
-* Local testing of web and mobile apps.
-* Online Accessibility Testing across 3000+ desktop and mobile browsers, browser versions, and operating systems.
-* Geolocation testing of web and mobile apps across 53+ countries.
-* LT Browser - for responsive testing across 50+ pre-installed mobile, tablets, desktop, and laptop viewports
-    
+- Run Selenium, Cypress, Puppeteer, Playwright, and Appium automation tests across 3000+ real desktop and mobile environments.
+- Real-time cross browser testing on 3000+ environments.
+- Test on Real device cloud
+- Blazing fast test automation with HyperExecute
+- Accelerate testing, shorten job times and get faster feedback on code changes with Test At Scale.
+- Smart Visual Regression Testing on cloud
+- 120+ third-party integrations with your favorite tool for CI/CD, Project Management, Codeless Automation, and more.
+- Automated Screenshot testing across multiple browsers in a single click.
+- Local testing of web and mobile apps.
+- Online Accessibility Testing across 3000+ desktop and mobile browsers, browser versions, and operating systems.
+- Geolocation testing of web and mobile apps across 53+ countries.
+- LT Browser - for responsive testing across 50+ pre-installed mobile, tablets, desktop, and laptop viewports
+
 [<img height="53" width="200" src="https://user-images.githubusercontent.com/70570645/171866795-52c11b49-0728-4229-b073-4b704209ddde.png">](https://accounts.lambdatest.com/register)
 
-      
 ## We are here to help you :headphones:
 
-* Got a query? we are available 24x7 to help. [Contact Us](support@lambdatest.com)
-* For more info, visit - [LambdaTest](https://www.lambdatest.com/?utm_source=github&utm_medium=repo&utm_campaign=LT-appium-nodejs-webdriverio)
+- Got a query? we are available 24x7 to help. [Contact Us](support@lambdatest.com)
+- For more info, visit - [LambdaTest](https://www.lambdatest.com/?utm_source=github&utm_medium=repo&utm_campaign=LT-appium-nodejs-webdriverio)
