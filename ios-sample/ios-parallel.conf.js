@@ -11,7 +11,7 @@ exports.config = {
     build: "NodeJS WebdriverIO iOS",
     name: "Sample Parallel Test - WebDriverIO",
     isRealMobile: true,
-    app: "YOUR_APP_URL", //Set your APP URL
+    app: "lt://proverbial-ios", //Set your APP URL
   },
 
   capabilities: [
