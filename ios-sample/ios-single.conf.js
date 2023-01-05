@@ -3,7 +3,7 @@ exports.config = {
   key: process.env.LT_ACCESS_KEY || "YOUR_ACCESS_KEY",
 
   updateJob: false,
-  specs: ["specs/ios-test.js"],
+  specs: ["./../specs/ios-test.js"],
   exclude: [],
 
   capabilities: [
