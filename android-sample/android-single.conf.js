@@ -3,18 +3,18 @@ exports.config = {
   key: process.env.LT_ACCESS_KEY || "YOUR_ACCESS_KEY",
 
   updateJob: false,
-  specs: ["./../specs/android-test.js"],
+  specs: ["./../specs/ios-test.js"],
   exclude: [],
 
   capabilities: [
     {
-      build: "NodeJS WebDriverIO Android",
+      build: "NodeJS WebDriverIO iOS",
       name: "Sample Test - WebDriverIO",
       isRealMobile: true,
-      platformName: "Android",
-      deviceName: "Galaxy S9",
-      platformVersion: "10",
-      app: "YOUR_APP_URL", //Set your APP URL
+      deviceName: "Pixel .*",
+      platformVersion: "12",
+      platformName: "android",
+      app: "lt://proverbial-android", //Set your APP URL
     },
   ],
 

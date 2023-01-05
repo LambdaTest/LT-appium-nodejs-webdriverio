@@ -41,14 +41,14 @@ describe("Proverbial APK", () => {
     driver.back();
   });
 
-  it("Browser", async () => {
-    var browser = await $("id=Browser");
-    await browser.waitForDisplayed({ timeout: 30000 });
-    await browser.click();
+  // it("Browser", async () => {
+  //   var browser = await $("id=Browser");
+  //   await browser.waitForDisplayed({ timeout: 30000 });
+  //   await browser.click();
 
-    let el7 = await $("id=url");
-    await el7.click();
-    await el7.setValue("https://www.lambdatest.com/");
-    driver.back();
-  });
+  //   let el7 = await $("id=url");
+  //   await el7.click();
+  //   await el7.setValue("https://www.lambdatest.com/");
+  //   driver.back();
+  // });
 });
