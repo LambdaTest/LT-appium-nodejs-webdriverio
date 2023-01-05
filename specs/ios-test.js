@@ -33,7 +33,7 @@ describe("Proverbial APK", () => {
   });
 
   it("SpeedTest", async () => {
-    var st = await $("id=speedTest");
+    var st = await $("id=Speed Test");
     await st.waitForDisplayed({ timeout: 30000 });
     await st.click();
 
