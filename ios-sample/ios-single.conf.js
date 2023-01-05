@@ -14,7 +14,7 @@ exports.config = {
       deviceName: "iPhone 13 Pro",
       platformVersion: "15",
       platformName: "iOS",
-      app: "YOUR_APP_URL", //Set your APP URL
+      app: "lt://proverbial-ios", //Set your APP URL
     },
   ],
 
