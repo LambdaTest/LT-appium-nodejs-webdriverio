@@ -29,6 +29,7 @@ describe("Proverbial APK", () => {
     await geo.waitForDisplayed({ timeout: 30000 });
     await geo.click();
 
+    await browser.pause(10000);
     driver.back();
   });
 
