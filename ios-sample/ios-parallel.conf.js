@@ -19,11 +19,19 @@ exports.config = {
       deviceName: "iPhone 13 Pro",
       platformVersion: "15",
       platformName: "iOS",
+      build: "NodeJS WebdriverIO iOS",
+      name: "Sample Parallel Test - WebDriverIO",
+      isRealMobile: true,
+      app: "lt://proverbial-ios"
     },
     {
       deviceName: "iPhone 13 Pro Max",
       platformVersion: "15",
       platformName: "iOS",
+      build: "NodeJS WebdriverIO iOS",
+      name: "Sample Parallel Test - WebDriverIO",
+      isRealMobile: true,
+      app: "YOUR_APP_URL"
     },
   ],
 
