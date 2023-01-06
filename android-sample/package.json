@@ -2,7 +2,9 @@
   "name": "webdriverio-appium-app",
   "scripts": {
     "single": "./node_modules/.bin/wdio android-single.conf.js",
-    "parallel": "./node_modules/.bin/wdio android-parallel.conf.js"
+    "parallel": "./node_modules/.bin/wdio android-parallel.conf.js",
+    "singleWeb": "./node_modules/.bin/wdio android-web-single.conf.js",
+    "parallelWeb": "./node_modules/.bin/wdio android-web-parallel.conf.js"
   },
   "dependencies": {
     "@wdio/cli": "^5.20.1",
