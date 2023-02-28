@@ -6,6 +6,11 @@
       "singleIOS": "./node_modules/.bin/wdio ios-sample/ios-single.conf.js",
       "parallelIOS": "./node_modules/.bin/wdio ios-sample/ios-parallel.conf.js",
 
+      "ltOptionsParallelAndroidApp": "./node_modules/.bin/wdio android-sample/android_ltOptions_w3c/android-app-parallel-ltOptions-w3c.conf.js",
+      "ltOptionsParallelAndroidWeb": "./node_modules/.bin/wdio android-sample/android_ltOptions_w3c/android-web-parallel-ltOptions-w3c.conf.js",
+      "ltOptionsParalleliOSApp": "./node_modules/.bin/wdio ios-sample/ios_ltOptions_w3c/ios-app-parallel-ltOptions-w3c.conf.js",
+      "ltOptionsParalleliOSWeb": "./node_modules/.bin/wdio ios-sample/ios_ltOptions_w3c/ios-web-parallel-ltOptions-w3c.conf.js",
+
       "singleAndroidWindows": "node_modules\\.bin\\wdio android-sample\\android-single.conf.js",
       "parallelAndroidWindows": "node_modules\\.bin\\wdio android-sample\\android-parallel.conf.js",
       "singleIOSWindows": "node_modules\\.bin\\wdio ios-sample\\ios-single.conf.js",
