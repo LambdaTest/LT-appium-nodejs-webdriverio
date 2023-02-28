@@ -13,7 +13,7 @@ exports.config = {
     capabilities: [
       {
         platformName: "Android",
-        deviceName: "*",
+        deviceName: ".*",
         platformVersion: "12",
         name: "android_none",
         isRealMobile: true,
