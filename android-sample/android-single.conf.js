@@ -8,13 +8,13 @@ exports.config = {
 
   capabilities: [
     {
-      build: "NodeJS WebDriverIO iOS",
+      build: "LT_Appium_NodeJS_WebDriverIO_App_Automation",
       name: "Sample Test - WebDriverIO",
       isRealMobile: true,
-      deviceName: "Pixel .*",
+      deviceName: ".*",
       platformVersion: "12",
       platformName: "android",
-      app: "lt://proverbial-android", //Set your APP URL
+      app: process.env.LT_APP_ID||"lt://proverbial-android", //Set your APP URL
     },
   ],
 
@@ -26,7 +26,7 @@ exports.config = {
   connectionRetryTimeout: 90000,
   connectionRetryCount: 3,
   path: "/wd/hub",
-  hostname: "mobile-hub.lambdatest.com",
+  hostname: "mobile-hub.lambdatest.com"||process.env.LT_GRID_URL,
   port: 80,
 
   framework: "mocha",

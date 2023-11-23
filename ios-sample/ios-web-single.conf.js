@@ -8,10 +8,10 @@ exports.config = {
   
     capabilities: [
       {
-        build: "NodeJS WebDriverIO iOS",
+        build: "LT_Appium_NodeJS_WebDriverIO_Web_Automation",
         name: "Sample Test - WebDriverIO",
         isRealMobile: true,
-        deviceName: "iPhone .*",
+        deviceName: "iPhone.*",
         platformVersion: "14",
         platformName: "iOS"
       },
@@ -25,7 +25,7 @@ exports.config = {
     connectionRetryTimeout: 90000,
     connectionRetryCount: 3,
     path: "/wd/hub",
-    hostname: "mobile-hub.lambdatest.com",
+    hostname: "mobile-hub.lambdatest.com"||process.env.LT_GRID_URL,
     port: 80,
   
     framework: "mocha",

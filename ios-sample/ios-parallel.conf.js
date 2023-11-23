@@ -8,30 +8,30 @@ exports.config = {
 
   maxInstances: 10,
   commonCapabilities: {
-    build: "NodeJS WebdriverIO iOS",
+    build: "LT_Appium_NodeJS_WebDriverIO_App_Automation",
     name: "Sample Parallel Test - WebDriverIO",
     isRealMobile: true,
-    app: "lt://proverbial-ios", //Set your APP URL
+    app: process.env.LT_APP_ID,//Set your APP URL
   },
 
   capabilities: [
     {
-      deviceName: "iPhone 13 Pro",
+      deviceName: "iPhone.*",
       platformVersion: "15",
       platformName: "iOS",
-      build: "NodeJS WebdriverIO iOS",
+      build: "LT_Appium_NodeJS_WebDriverIO_App_Automation",
       name: "Sample Parallel Test - WebDriverIO",
       isRealMobile: true,
-      app: "lt://proverbial-ios"
+      app: process.env.LT_APP_ID||"lt://proverbial-ios",
     },
     {
-      deviceName: "iPhone 13 Pro Max",
-      platformVersion: "15",
+      deviceName: "iPhone.*",
+      platformVersion: "14",
       platformName: "iOS",
-      build: "NodeJS WebdriverIO iOS",
+      build: "LT_Appium_NodeJS_WebDriverIO_App_Automation",
       name: "Sample Parallel Test - WebDriverIO",
       isRealMobile: true,
-      app: "YOUR_APP_URL"
+      app: process.env.LT_APP_ID||"lt://proverbial-ios",
     },
   ],
 
@@ -43,7 +43,7 @@ exports.config = {
   connectionRetryTimeout: 90000,
   connectionRetryCount: 3,
   path: "/wd/hub",
-  hostname: "mobile-hub.lambdatest.com",
+  hostname: "mobile-hub.lambdatest.com"||process.env.LT_GRID_URL,
   port: 80,
 
   framework: "mocha",
