@@ -10,7 +10,6 @@ exports.config = {
     build: "LT_Appium_NodeJS_WebDriverIO_App_Automation",
     name: "Sample Parallel Test - WebDriverIO",
     isRealMobile: true,
-    network: true,
     devicelog: true, 
   },
 
