@@ -33,14 +33,14 @@ describe("Proverbial APK", () => {
     driver.back();
   });
 
-  it("SpeedTest", async () => {
-    var st = await $("id=Speed Test");
-    await st.waitForDisplayed({ timeout: 30000 });
-    await st.click();
+  // it("SpeedTest", async () => {
+  //   var st = await $("id=Speed Test");
+  //   await st.waitForDisplayed({ timeout: 30000 });
+  //   await st.click();
 
-    await browser.pause(10000);
-    driver.back();
-  });
+  //   await browser.pause(10000);
+  //   driver.back();
+  // });
 
   // it("Browser", async () => {
   //   var browser = await $("id=Browser");

@@ -42,7 +42,7 @@ exports.config = {
   connectionRetryTimeout: 90000,
   connectionRetryCount: 3,
   path: "/wd/hub",
-  hostname: "mobile-hub.lambdatest.com"||process.env.LT_GRID_URL,
+  hostname: process.env.LT_GRID_URL||"mobile-hub.lambdatest.com",
   port: 80,
 
   framework: "mocha",
