@@ -10,7 +10,8 @@ exports.config = {
     build: "LT_Appium_NodeJS_WebDriverIO_App_Automation",
     name: "Sample Parallel Test - WebDriverIO",
     isRealMobile: true,
-    app: "lt://proverbial-android",
+    network: true,
+    devicelog: true, 
   },
 
   capabilities: [
@@ -18,18 +19,14 @@ exports.config = {
       platformName: "Android",
       deviceName: ".*",
       platformVersion: "11",
-      build: "LT_Appium_NodeJS_WebDriverIO_App_Automation",
       name: "Sample Parallel Test - WebDriverIO",
-      isRealMobile: true,
       app: process.env.LT_APP_ID||"lt://proverbial-android",
     },
     {
       platformName: "Android",
       deviceName: ".*",
       platformVersion: "10",
-      build: "LT_Appium_NodeJS_WebDriverIO_App_Automation",
       name: "Sample Parallel Test - WebDriverIO",
-      isRealMobile: true,
       app: process.env.LT_APP_ID||"lt://proverbial-android",
     },
   ],

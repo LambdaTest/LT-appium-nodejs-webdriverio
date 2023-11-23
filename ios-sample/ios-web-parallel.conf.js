@@ -18,17 +18,13 @@ exports.config = {
         deviceName: "iPhone.*",
         platformVersion: "14",
         platformName: "iOS",
-        build: "LT_Appium_NodeJS_WebDriverIO_Web_Automation",
         name: "Sample Parallel Test - WebDriverIO",
-        isRealMobile: true
       },
       {
         deviceName: "iPhone.*",
         platformVersion: "15",
         platformName: "iOS",
-        build: "LT_Appium_NodeJS_WebDriverIO_Web_Automation",
         name: "Sample Parallel Test - WebDriverIO",
-        isRealMobile: true
       },
     ],
   

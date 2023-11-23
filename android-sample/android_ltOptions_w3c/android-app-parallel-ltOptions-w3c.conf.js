@@ -7,7 +7,9 @@ exports.config = {
     exclude: [],
   
     commonCapabilities: {
-      build: "NodeJS WebdriverIO - ltoptions - w3c",    
+      build: "LT_Appium_NodeJS_WebDriverIO_ltoptions_w3_App_Automation",
+      network: true,
+      devicelog: true,  
     },
   
     capabilities: [
@@ -15,7 +17,7 @@ exports.config = {
         deviceName: ".*",
         name: "android_none",
         isRealMobile: true,
-        app: "lt://proverbial-android",
+        app: process.env.LT_APP_ID||"lt://proverbial-android",
         platformName: "Android",
         enableCustomTranslation: true,
       },
@@ -24,7 +26,7 @@ exports.config = {
         name: "android_w3c",
         w3c: true,
         isRealMobile: true,
-        app: "lt://proverbial-android",
+        app: process.env.LT_APP_ID||"lt://proverbial-android",
         platformName: "Android",
         enableCustomTranslation: true,
       },
@@ -34,7 +36,7 @@ exports.config = {
           name: "android_ltOptions_w3c",
           w3c: true,
           isRealMobile: true,
-          app: "lt://proverbial-android",
+          app: process.env.LT_APP_ID||"lt://proverbial-android",
           platformName: "Android",
           enableCustomTranslation: true,
         }
@@ -44,7 +46,7 @@ exports.config = {
           deviceName: ".*",
           name: "android_ltOptions",
           isRealMobile: true,
-          app: "lt://proverbial-android",
+          app: process.env.LT_APP_ID||"lt://proverbial-android",
           platformName: "Android",
           enableCustomTranslation: true,
         }
@@ -59,7 +61,7 @@ exports.config = {
     connectionRetryTimeout: 90000,
     connectionRetryCount: 3,
     path: "/wd/hub",
-    hostname: "mobile-hub.lambdatest.com",
+    hostname: process.env.LT_GRID_URL||"mobile-hub.lambdatest.com",
     port: 80,
   
     framework: "mocha",

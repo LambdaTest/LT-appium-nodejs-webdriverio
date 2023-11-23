@@ -17,17 +17,13 @@ exports.config = {
         platformName: "Android",
         deviceName: ".*",
         platformVersion: "11",
-        build: "LT_Appium_NodeJS_WebDriverIO_Web_Automation",
         name: "Sample Parallel Test - WebDriverIO",
-        isRealMobile: true
       },
       {
         platformName: "Android",
         deviceName: ".*",
         platformVersion: "10",
-        build: "LT_Appium_NodeJS_WebDriverIO_Web_Automation",
         name: "Sample Parallel Test - WebDriverIO",
-        isRealMobile: true
       },
     ],
   

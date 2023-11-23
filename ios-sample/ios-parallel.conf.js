@@ -11,7 +11,8 @@ exports.config = {
     build: "LT_Appium_NodeJS_WebDriverIO_App_Automation",
     name: "Sample Parallel Test - WebDriverIO",
     isRealMobile: true,
-    app: process.env.LT_APP_ID,//Set your APP URL
+    network: true,
+    devicelog: true,
   },
 
   capabilities: [
@@ -19,18 +20,14 @@ exports.config = {
       deviceName: "iPhone.*",
       platformVersion: "15",
       platformName: "iOS",
-      build: "LT_Appium_NodeJS_WebDriverIO_App_Automation",
       name: "Sample Parallel Test - WebDriverIO",
-      isRealMobile: true,
       app: process.env.LT_APP_ID||"lt://proverbial-ios",
     },
     {
       deviceName: "iPhone.*",
       platformVersion: "14",
       platformName: "iOS",
-      build: "LT_Appium_NodeJS_WebDriverIO_App_Automation",
       name: "Sample Parallel Test - WebDriverIO",
-      isRealMobile: true,
       app: process.env.LT_APP_ID||"lt://proverbial-ios",
     },
   ],

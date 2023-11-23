@@ -15,6 +15,8 @@ exports.config = {
       platformVersion: "12",
       platformName: "android",
       app: process.env.LT_APP_ID||"lt://proverbial-android", //Set your APP URL
+      network: true,
+      devicelog: true, 
     },
   ],
 
