@@ -3,50 +3,29 @@ exports.config = {
     key: process.env.LT_ACCESS_KEY || "YOUR_ACCESS_KEY",
   
     updateJob: false,
-    specs: ["./../specs/android-ios-web-test.js"],
+    specs: ["./../specs/ios-test.js"],
     exclude: [],
   
     maxInstances: 10,
     commonCapabilities: {
-      build: "LT_Appium_NodeJS_WebDriverIO_ltoptions_w3_Web_Automation",
-      visual: true,
+      build: "LT_Appium_NodeJS_WebDriverIO_ltoptions_w3_App_Automation",
+      network: true,
+      devicelog: true,
+      visual: true, 
     },
   
     capabilities: [
       {
-        deviceName: ".*",
-        platformName: "iOS",
-        name: "ios_none",
-        isRealMobile: true,
-        enableCustomTranslation: true,
-      },
-      {
-        deviceName: ".*",
-        platformName: "iOS",
-        name: "ios_w3c",
-        isRealMobile: true,
-        w3c: true,
-        enableCustomTranslation: true,
-      },
-      {
         "lt:options": {
           deviceName: ".*",
           platformName: "iOS",
-          name: "ios_ltOptions",
-          isRealMobile: true,
           enableCustomTranslation: true,
-        }
-      },
-      {
-        "lt:options": {
-          deviceName: ".*",
-          platformName: "iOS",
           name: "ios_ltOptions_w3c",
           isRealMobile: true,
           w3c: true,
-          enableCustomTranslation: true,
+          app: process.env.LT_APP_ID||"lt://proverbial-ios", //Set your APP URL
         }
-      }
+      },
     ],
   
     logLevel: "info",

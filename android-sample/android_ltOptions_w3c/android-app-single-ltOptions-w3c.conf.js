@@ -3,51 +3,24 @@ exports.config = {
     key: process.env.LT_ACCESS_KEY || "YOUR_ACCESS_KEY",
   
     updateJob: false,
-    specs: ["./../specs/android-ios-web-test.js"],
+    specs: ["./../specs/android-test.js"],
     exclude: [],
   
     commonCapabilities: {
-      build: "LT_Appium_NodeJS_WebDriverIO_ltoptions_w3_Web_Automation",
-      visual: true,
+      build: "LT_Appium_NodeJS_WebDriverIO_ltoptions_w3_App_Automation",
+      devicelog: true,
+      visual: true,  
     },
   
     capabilities: [
       {
-        platformName: "Android",
-        deviceName: ".*",
-        platformVersion: "12",
-        name: "android_none",
-        isRealMobile: true,
-        enableCustomTranslation: true,
-      },
-      {
-        platformName: "Android",
-        deviceName: ".*",
-        platformVersion: "12",
-        name: "android_w3c",
-        isRealMobile: true,
-        enableCustomTranslation: true,
-        w3c: true,
-      },
-      {
         "lt:options": {
-          platformName: "Android",
           deviceName: ".*",
-          platformVersion: "12",
           name: "android_ltOptions",
           isRealMobile: true,
-          enableCustomTranslation: true,
-        }
-      },
-      {
-        "lt:options": {
+          app: process.env.LT_APP_ID||"lt://proverbial-android",
           platformName: "Android",
-          deviceName: ".*",
-          platformVersion: "12",
-          name: "android_ltOptions_w3c",
-          isRealMobile: true,
           enableCustomTranslation: true,
-          w3c: true,
         }
       },
     ],

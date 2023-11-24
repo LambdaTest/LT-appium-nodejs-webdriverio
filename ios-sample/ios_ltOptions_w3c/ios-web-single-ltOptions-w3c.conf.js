@@ -6,16 +6,23 @@ exports.config = {
     specs: ["./../specs/android-ios-web-test.js"],
     exclude: [],
   
+    maxInstances: 10,
+    commonCapabilities: {
+      build: "LT_Appium_NodeJS_WebDriverIO_ltoptions_w3_Web_Automation",
+      visual: true,
+    },
+  
     capabilities: [
       {
-        build: "LT_Appium_NodeJS_WebDriverIO_Web_Automation",
-        name: "Sample Test - WebDriverIO",
-        isRealMobile: true,
-        deviceName: ".*",
-        platformVersion: "12",
-        platformName: "android",
-        visual: true
-      },
+        "lt:options": {
+          deviceName: ".*",
+          platformName: "iOS",
+          name: "ios_ltOptions_w3c",
+          isRealMobile: true,
+          w3c: true,
+          enableCustomTranslation: true,
+        }
+      }
     ],
   
     logLevel: "info",
@@ -35,4 +42,10 @@ exports.config = {
       timeout: 20000,
     },
   };
+  
+  // Code to support common capabilities
+  exports.config.capabilities.forEach(function (caps) {
+    for (var i in exports.config.commonCapabilities)
+      caps[i] = caps[i] || exports.config.commonCapabilities[i];
+  });
   

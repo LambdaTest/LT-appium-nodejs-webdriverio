@@ -6,22 +6,29 @@ exports.config = {
     specs: ["./../specs/android-ios-web-test.js"],
     exclude: [],
   
+    commonCapabilities: {
+      build: "LT_Appium_NodeJS_WebDriverIO_ltoptions_w3_Web_Automation",
+      visual: true,
+    },
+  
     capabilities: [
       {
-        build: "LT_Appium_NodeJS_WebDriverIO_Web_Automation",
-        name: "Sample Test - WebDriverIO",
-        isRealMobile: true,
-        deviceName: "iPhone.*",
-        platformVersion: "14",
-        platformName: "iOS",
-        visual: true
+        "lt:options": {
+          platformName: "Android",
+          deviceName: ".*",
+          platformVersion: "12",
+          name: "android_ltOptions_w3c",
+          isRealMobile: true,
+          enableCustomTranslation: true,
+          w3c: true,
+        }
       },
     ],
   
     logLevel: "info",
     coloredLogs: true,
     screenshotPath: "./errorShots/",
-    baseUrl: "",
+    baseUrl: "https://mobile-hub.lambdatest.com",
     waitforTimeout: 10000,
     connectionRetryTimeout: 90000,
     connectionRetryCount: 3,
@@ -35,4 +42,9 @@ exports.config = {
       timeout: 20000,
     },
   };
+  
+  exports.config.capabilities.forEach(function (caps) {
+    for (var i in exports.config.commonCapabilities)
+      caps[i] = caps[i] || exports.config.commonCapabilities[i];
+  });
   
