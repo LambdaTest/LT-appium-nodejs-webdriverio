@@ -1,7 +1,10 @@
 describe("Web automation real device", () => {
-    it("Changes color", async () => {
+    it("Opening Website", async () => {
       browser.setTimeout({ 'script': 60000 });
       browser.url("https://mfml.in/api/getInfo")
+    });
+
+    it("Changes color", async () => {
       var color = await $("id=resolution");
       await color.waitForDisplayed({ timeout: 30000 });
       await color.click();
