@@ -13,7 +13,8 @@ exports.config = {
         isRealMobile: true,
         deviceName: "iPhone.*",
         platformVersion: "14",
-        platformName: "iOS"
+        platformName: "iOS",
+        visual: true
       },
     ],
   

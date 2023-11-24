@@ -10,7 +10,8 @@ exports.config = {
     commonCapabilities: {
       build: "LT_Appium_NodeJS_WebDriverIO_Web_Automation",
       name: "Sample Parallel Test - WebDriverIO",
-      isRealMobile: true
+      isRealMobile: true,
+      visual: true
     },
   
     capabilities: [

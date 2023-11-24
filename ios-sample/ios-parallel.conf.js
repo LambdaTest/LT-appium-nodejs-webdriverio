@@ -13,6 +13,7 @@ exports.config = {
     isRealMobile: true,
     network: true,
     devicelog: true,
+    visual: true,
   },
 
   capabilities: [

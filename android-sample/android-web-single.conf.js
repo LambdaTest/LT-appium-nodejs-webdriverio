@@ -13,7 +13,8 @@ exports.config = {
         isRealMobile: true,
         deviceName: ".*",
         platformVersion: "12",
-        platformName: "android"
+        platformName: "android",
+        visual: true
       },
     ],
   

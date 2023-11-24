@@ -8,7 +8,8 @@ exports.config = {
   
     maxInstances: 10,
     commonCapabilities: {
-      build: "LT_Appium_NodeJS_WebDriverIO_ltoptions_w3_Web_Automation"
+      build: "LT_Appium_NodeJS_WebDriverIO_ltoptions_w3_Web_Automation",
+      visual: true,
     },
   
     capabilities: [

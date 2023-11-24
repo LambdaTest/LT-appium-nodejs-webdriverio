@@ -11,6 +11,7 @@ exports.config = {
     name: "Sample Parallel Test - WebDriverIO",
     isRealMobile: true,
     devicelog: true, 
+    visual: true,
   },
 
   capabilities: [

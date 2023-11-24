@@ -17,6 +17,7 @@ exports.config = {
       app: process.env.LT_APP_ID||"lt://proverbial-ios", //Set your APP URL
       network: true,
       devicelog: true,
+      visual: true,
     },
   ],
 

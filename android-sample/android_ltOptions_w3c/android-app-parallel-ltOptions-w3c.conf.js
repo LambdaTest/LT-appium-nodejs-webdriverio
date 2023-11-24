@@ -8,7 +8,8 @@ exports.config = {
   
     commonCapabilities: {
       build: "LT_Appium_NodeJS_WebDriverIO_ltoptions_w3_App_Automation",
-      devicelog: true,  
+      devicelog: true,
+      visual: true,  
     },
   
     capabilities: [
