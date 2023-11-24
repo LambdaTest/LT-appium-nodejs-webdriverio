@@ -5,8 +5,8 @@
     "parallel": "./node_modules/.bin/wdio ios-parallel.conf.js",
     "singleWeb": "./node_modules/.bin/wdio ios-web-single.conf.js",
     "parallelWeb": "./node_modules/.bin/wdio ios-web-parallel.conf.js",
-    "ltOptionsParalleliOSApp": "./node_modules/.bin/wdio ios_ltOptions_w3c/ios-app-parallel-ltOptions-w3c.conf.js",
-    "ltOptionsParalleliOSWeb": "./node_modules/.bin/wdio ios_ltOptions_w3c/ios-web-parallel-ltOptions-w3c.conf.js"
+    "ltOptionsSingleiOSApp": "./node_modules/.bin/wdio ios_ltOptions_w3c/ios-app-single-ltOptions-w3c.conf.js",
+    "ltOptionsSingleiOSWeb": "./node_modules/.bin/wdio ios_ltOptions_w3c/ios-web-single-ltOptions-w3c.conf.js"
   },
   "dependencies": {
     "@wdio/cli": "^5.20.1",
