@@ -18,14 +18,12 @@ exports.config = {
     {
       platformName: "Android",
       deviceName: ".*",
-      platformVersion: "11",
       name: "Sample Parallel Test - WebDriverIO",
       app: process.env.LT_APP_ID||"lt://proverbial-android",
     },
     {
       platformName: "Android",
       deviceName: ".*",
-      platformVersion: "10",
       name: "Sample Parallel Test - WebDriverIO",
       app: process.env.LT_APP_ID||"lt://proverbial-android",
     },

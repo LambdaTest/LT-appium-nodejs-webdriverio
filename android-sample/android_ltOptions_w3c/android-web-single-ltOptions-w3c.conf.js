@@ -3,7 +3,7 @@ exports.config = {
     key: process.env.LT_ACCESS_KEY || "YOUR_ACCESS_KEY",
   
     updateJob: false,
-    specs: ["./../specs/android-ios-web-test.js"],
+    specs: ["./../specs/android-web-test.js"],
     exclude: [],
   
     commonCapabilities: {
@@ -16,7 +16,6 @@ exports.config = {
         "lt:options": {
           platformName: "Android",
           deviceName: ".*",
-          platformVersion: "12",
           name: "android_ltOptions_w3c",
           isRealMobile: true,
           enableCustomTranslation: true,

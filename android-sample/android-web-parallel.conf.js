@@ -3,7 +3,7 @@ exports.config = {
     key: process.env.LT_ACCESS_KEY || "YOUR_ACCESS_KEY",
   
     updateJob: false,
-    specs: ["./../specs/android-ios-web-test.js"],
+    specs: ["./../specs/android-web-test.js"],
     exclude: [],
   
     commonCapabilities: {
@@ -17,13 +17,11 @@ exports.config = {
       {
         platformName: "Android",
         deviceName: ".*",
-        platformVersion: "11",
         name: "Sample Parallel Test - WebDriverIO",
       },
       {
         platformName: "Android",
         deviceName: ".*",
-        platformVersion: "10",
         name: "Sample Parallel Test - WebDriverIO",
       },
     ],
