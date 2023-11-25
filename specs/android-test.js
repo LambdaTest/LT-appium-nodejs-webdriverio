@@ -28,7 +28,6 @@ describe("Proverbial APK", () => {
     var geo = await $("id=geoLocation");
     await geo.waitForDisplayed({ timeout: 30000 });
     await geo.click();
-
     await driver.back();
   });
 
@@ -36,7 +35,6 @@ describe("Proverbial APK", () => {
     var st = await $("id=speedTest");
     await st.waitForDisplayed({ timeout: 30000 });
     await st.click();
-
     await browser.pause(10000);
     await driver.back();
   });
