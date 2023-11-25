@@ -3,7 +3,7 @@ exports.config = {
     key: process.env.LT_ACCESS_KEY || "YOUR_ACCESS_KEY",
   
     updateJob: false,
-    specs: ["./../specs/android-ios-web-test.js"],
+    specs: ["./../specs/ios-web-test.js"],
     exclude: [],
   
     maxInstances: 10,
@@ -17,13 +17,11 @@ exports.config = {
     capabilities: [
       {
         deviceName: "iPhone.*",
-        platformVersion: "14",
         platformName: "iOS",
         name: "Sample Parallel Test - WebDriverIO",
       },
       {
         deviceName: "iPhone.*",
-        platformVersion: "15",
         platformName: "iOS",
         name: "Sample Parallel Test - WebDriverIO",
       },

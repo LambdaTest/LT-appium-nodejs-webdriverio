@@ -32,6 +32,4 @@ describe("Proverbial APK", () => {
     await browser.pause(10000);
     driver.back();
   });
-
-
 });

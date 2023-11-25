@@ -1,9 +1,7 @@
 {
   "name": "webdriverio-appium-app",
   "scripts": {
-    "single": "./node_modules/.bin/wdio ios-single.conf.js",
     "parallel": "./node_modules/.bin/wdio ios-parallel.conf.js",
-    "singleWeb": "./node_modules/.bin/wdio ios-web-single.conf.js",
     "parallelWeb": "./node_modules/.bin/wdio ios-web-parallel.conf.js",
     "ltOptionsSingleiOSApp": "./node_modules/.bin/wdio ios_ltOptions_w3c/ios-app-single-ltOptions-w3c.conf.js",
     "ltOptionsSingleiOSWeb": "./node_modules/.bin/wdio ios_ltOptions_w3c/ios-web-single-ltOptions-w3c.conf.js"

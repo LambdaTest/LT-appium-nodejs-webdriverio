@@ -29,7 +29,7 @@ describe("Proverbial APK", () => {
     await geo.waitForDisplayed({ timeout: 30000 });
     await geo.click();
 
-    driver.back();
+    await driver.back();
   });
 
   it("SpeedTest", async () => {
@@ -38,17 +38,7 @@ describe("Proverbial APK", () => {
     await st.click();
 
     await browser.pause(10000);
-    driver.back();
+    await driver.back();
   });
 
-  // it("Browser", async () => {
-  //   var browser = await $("id=Browser");
-  //   await browser.waitForDisplayed({ timeout: 30000 });
-  //   await browser.click();
-
-  //   let el7 = await $("id=url");
-  //   await el7.click();
-  //   await el7.setValue("https://www.lambdatest.com/");
-  //   driver.back();
-  // });
 });
