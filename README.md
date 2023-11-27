@@ -242,31 +242,20 @@ npm i
 
 **Single:**
 
-- *MacOS/Linux* 
+- *MacOS/Linux*/Windows* 
 
 ```bash
-npm run ltOptionsSingleAndroidApp
-```
-
-- *Windows*
-
-```bash
-npm run ltOptionsSingleAndroidApp
+npm run SingleAndroidApp
 ```
 
 **Parallel:**
 
-- *MacOS/Linux* 
+- *MacOS/Linux*/Windows* 
 
 ```bash
 npm run parallel
 ```
 
-- *Windows*
-
-```bash
-npm run parallel
-```
 
 **Info:** Your test results would be displayed on the test console (or command-line interface if you are using terminal/cmd) and on the :link: [LambdaTest App Automation Dashboard](https://appautomation.lambdatest.com/build/?utm_source=github&utm_medium=repo&utm_campaign=LT-appium-nodejs-webdriverio).
 

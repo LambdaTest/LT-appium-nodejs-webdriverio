@@ -3,8 +3,8 @@
   "scripts": {
     "parallel": "./node_modules/.bin/wdio android-parallel.conf.js",
     "parallelWeb": "./node_modules/.bin/wdio android-web-parallel.conf.js",
-    "ltOptionsSingleAndroidApp": "./node_modules/.bin/wdio android_ltOptions_w3c/android-app-single-ltOptions-w3c.conf.js",
-    "ltOptionsSingleAndroidWeb": "./node_modules/.bin/wdio android_ltOptions_w3c/android-web-single-ltOptions-w3c.conf.js"
+    "SingleAndroidApp": "./node_modules/.bin/wdio android_ltOptions_w3c/android-app-single-ltOptions-w3c.conf.js",
+    "SingleAndroidWeb": "./node_modules/.bin/wdio android_ltOptions_w3c/android-web-single-ltOptions-w3c.conf.js"
   },
   "dependencies": {
     "@wdio/cli": "^5.20.1",
