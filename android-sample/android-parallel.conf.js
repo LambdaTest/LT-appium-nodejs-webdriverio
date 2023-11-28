@@ -1,36 +1,31 @@
 exports.config = {
   user: process.env.LT_USERNAME || "YOUR_USERNAME",
   key: process.env.LT_ACCESS_KEY || "YOUR_ACCESS_KEY",
-
+  
   updateJob: false,
   specs: ["./../specs/android-test.js"],
   exclude: [],
 
   commonCapabilities: {
-    build: "NodeJS WebdriverIO Android",
+    build: "LT_Appium_NodeJS_WebDriverIO_App_Automation",
     name: "Sample Parallel Test - WebDriverIO",
     isRealMobile: true,
-    app: "lt://proverbial-android",
+    devicelog: true, 
+    visual: true,
   },
 
   capabilities: [
     {
       platformName: "Android",
-      deviceName: "Galaxy S9",
-      platformVersion: "10",
-      build: "NodeJS WebdriverIO Android",
+      deviceName: ".*",
       name: "Sample Parallel Test - WebDriverIO",
-      isRealMobile: true,
-      app: "lt://proverbial-android",
+      app: process.env.LT_APP_ID||"lt://proverbial-android",
     },
     {
       platformName: "Android",
-      deviceName: "Galaxy S9 Plus",
-      platformVersion: "10",
-      build: "NodeJS WebdriverIO Android",
+      deviceName: ".*",
       name: "Sample Parallel Test - WebDriverIO",
-      isRealMobile: true,
-      app: "lt://proverbial-android",
+      app: process.env.LT_APP_ID||"lt://proverbial-android",
     },
   ],
 
@@ -42,7 +37,7 @@ exports.config = {
   connectionRetryTimeout: 90000,
   connectionRetryCount: 3,
   path: "/wd/hub",
-  hostname: "mobile-hub.lambdatest.com",
+  hostname: process.env.LT_GRID_URL||"mobile-hub.lambdatest.com",
   port: 80,
 
   framework: "mocha",

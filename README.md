@@ -226,42 +226,36 @@ exports.config = {
 - You can generate capabilities for your test requirements with the help of our inbuilt :link: **[Capabilities Generator tool](https://www.lambdatest.com/capabilities-generator/)**. A more Detailed Capability Guide is available [here :page_facing_up:](https://www.lambdatest.com/support/docs/desired-capabilities-in-appium/) .
 
 ## Executing The Tests
+**Step-5:** To Run Android Test 
 
-**Step-5:** Install the required dependencies using the following command:
+```bash
+cd android-sample
+```
+
+**Step-6:** Install the required dependencies using the following command:
 
 ```bash
 npm i
 ```
 
-**Step-6:** Execute the following command to run your test on LambdaTest platform:
+**Step-7:** Execute the following command to run your test on LambdaTest platform:
 
 **Single:**
 
-- *MacOS/Linux* 
+- *MacOS/Linux*/Windows* 
 
 ```bash
-npm run singleAndroid
-```
-
-- *Windows*
-
-```bash
-npm run singleAndroidWindows
+npm run SingleAndroidApp
 ```
 
 **Parallel:**
 
-- *MacOS/Linux* 
+- *MacOS/Linux*/Windows* 
 
 ```bash
-npm run parallelIOS
+npm run parallel
 ```
 
-- *Windows*
-
-```bash
-npm run parallelIOSWindows
-```
 
 **Info:** Your test results would be displayed on the test console (or command-line interface if you are using terminal/cmd) and on the :link: [LambdaTest App Automation Dashboard](https://appautomation.lambdatest.com/build/?utm_source=github&utm_medium=repo&utm_campaign=LT-appium-nodejs-webdriverio).
 

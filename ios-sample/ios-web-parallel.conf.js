@@ -3,32 +3,27 @@ exports.config = {
     key: process.env.LT_ACCESS_KEY || "YOUR_ACCESS_KEY",
   
     updateJob: false,
-    specs: ["./../specs/android-ios-web-test.js"],
+    specs: ["./../specs/ios-web-test.js"],
     exclude: [],
   
     maxInstances: 10,
     commonCapabilities: {
-      build: "NodeJS WebdriverIO iOS",
+      build: "LT_Appium_NodeJS_WebDriverIO_Web_Automation",
       name: "Sample Parallel Test - WebDriverIO",
-      isRealMobile: true
+      isRealMobile: true,
+      visual: true
     },
   
     capabilities: [
       {
-        deviceName: "iPhone .*",
-        platformVersion: "14",
+        deviceName: "iPhone.*",
         platformName: "iOS",
-        build: "NodeJS WebdriverIO iOS",
         name: "Sample Parallel Test - WebDriverIO",
-        isRealMobile: true
       },
       {
-        deviceName: "iPhone .*",
-        platformVersion: "15",
+        deviceName: "iPhone.*",
         platformName: "iOS",
-        build: "NodeJS WebdriverIO iOS",
         name: "Sample Parallel Test - WebDriverIO",
-        isRealMobile: true
       },
     ],
   
@@ -40,7 +35,7 @@ exports.config = {
     connectionRetryTimeout: 90000,
     connectionRetryCount: 3,
     path: "/wd/hub",
-    hostname: "mobile-hub.lambdatest.com",
+    hostname: process.env.LT_GRID_URL||"mobile-hub.lambdatest.com",
     port: 80,
   
     framework: "mocha",
