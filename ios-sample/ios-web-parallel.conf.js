@@ -1,9 +1,11 @@
+const path = require('path');
+
 exports.config = {
     user: process.env.LT_USERNAME || "YOUR_USERNAME",
     key: process.env.LT_ACCESS_KEY || "YOUR_ACCESS_KEY",
   
     updateJob: false,
-    specs: ["./../specs/ios-web-test.js"],
+    specs: [path.join(__dirname, '../specs/ios-web-test.js')],
     exclude: [],
   
     maxInstances: 10,
