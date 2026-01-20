@@ -1,0 +1,34 @@
+trigger:
+  branches:
+    include:
+      - master
+      - feature/*
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+variables:
+  LT_USERNAME: $(LT_USERNAME)
+  LT_ACCESS_KEY: $(LT_ACCESS_KEY)
+
+steps:
+- checkout: self
+
+- task: NodeTool@0
+  inputs:
+    versionSpec: '16.x'
+
+- script: |
+    cd android-sample
+    npm install
+  displayName: 'Install Dependencies'
+
+- script: |
+    cd android-sample
+    npm run SingleAndroidApp
+  displayName: 'Run Single Android Test'
+
+- script: |
+    cd android-sample
+    npm run parallel
+  displayName: 'Run Parallel Android Tests'
