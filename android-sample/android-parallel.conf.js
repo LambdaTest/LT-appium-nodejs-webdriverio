@@ -1,9 +1,11 @@
+const path = require('path');
+
 exports.config = {
   user: process.env.LT_USERNAME || "YOUR_USERNAME",
   key: process.env.LT_ACCESS_KEY || "YOUR_ACCESS_KEY",
   
   updateJob: false,
-  specs: ["./../specs/android-test.js"],
+  specs: [path.join(__dirname, '../specs/android-test.js')],
   exclude: [],
 
   commonCapabilities: {
@@ -26,6 +28,7 @@ exports.config = {
       deviceName: ".*",
       name: "Sample Parallel Test - WebDriverIO",
       app: process.env.LT_APP_ID||"lt://proverbial-android",
+      autoGrantPermissions: true,
     },
   ],
 
