@@ -1,131 +1,125 @@
-# WebDriverIO With Appium
+# Run Appium Tests with Node.js and WebDriverIO on TestMu AI
 
 <p align="center">
-<img height="500" src="https://user-images.githubusercontent.com/95698164/171858859-b08009f7-101e-43a9-8e4e-293bd690ccd5.png">
+  <a href="https://www.testmuai.com/"><img src="https://img.shields.io/badge/MADE%20BY%20TestMu%20AI-000000.svg?style=for-the-badge&labelColor=000" alt="Made by TestMu AI"></a>
+  <a href="https://www.npmjs.com/package/webdriverio"><img src="https://img.shields.io/npm/v/webdriverio.svg?style=for-the-badge&labelColor=000000" alt="WebDriverIO version"></a>
 </p>
 
-<p align="center">
-  <a href="https://www.lambdatest.com/blog/?utm_source=github&utm_medium=repo&utm_campaign=LT-appium-nodejs-webdriverio" target="_bank">Blog</a>
-  &nbsp; &#8901; &nbsp;
-  <a href="https://www.lambdatest.com/support/docs/?utm_source=github&utm_medium=repo&utm_campaign=LT-appium-nodejs-webdriverio" target="_bank">Docs</a>
-  &nbsp; &#8901; &nbsp;
-  <a href="https://www.lambdatest.com/learning-hub/?utm_source=github&utm_medium=repo&utm_campaign=LT-appium-nodejs-webdriverio" target="_bank">Learning Hub</a>
-  &nbsp; &#8901; &nbsp;
-  <a href="https://www.lambdatest.com/newsletter/?utm_source=github&utm_medium=repo&utm_campaign=LT-appium-nodejs-webdriverio" target="_bank">Newsletter</a>
-  &nbsp; &#8901; &nbsp;
-  <a href="https://www.lambdatest.com/certifications/?utm_source=github&utm_medium=repo&utm_campaign=LT-appium-nodejs-webdriverio" target="_bank">Certifications</a>
-  &nbsp; &#8901; &nbsp;
-  <a href="https://www.youtube.com/c/LambdaTest" target="_bank">YouTube</a>
-</p>
-&emsp;
-&emsp;
-&emsp;
+## Getting Started
 
-_WebdriverIO is a framework for automating web and mobile applications. It makes it easier to interact with your app, and provides a set of plugins that help you create a scalable, robust and stable test suite. Perform [WebDriverIO tests on LambdaTest's online cloud.](https://www.lambdatest.com/appium-mobile-testing/?utm_source=github&utm_medium=repo&utm_campaign=LT-appium-nodejs-webdriverio)._
+TestMu AI (formerly LambdaTest) enables you to run Appium tests with Node.js and WebDriverIO on real Android and iOS devices.
 
-_Learn the basics of [Appium testing on the LambdaTest platform](https://www.lambdatest.com/support/docs/getting-started-with-appium-testing/)._
+This sample project demonstrates how to configure and run Node.js WebDriverIO Appium tests on the TestMu AI Real Device Cloud.
 
-[<img height="53" width="200" src="https://user-images.githubusercontent.com/70570645/171866795-52c11b49-0728-4229-b073-4b704209ddde.png">](https://accounts.lambdatest.com/register)
+* [Sign up for TestMu AI](https://www.testmuai.com/register/)
+* [TestMu AI Documentation](https://www.testmuai.com/support/docs/)
 
-## Table of Contents
+## Prerequisites
 
-- [Pre-requisites](#pre-requisites)
-- [Run Your First Test](#run-your-first-test)
-- [Executing The Tests](#executing-the-tests)
+* Node.js and npm installed on your machine
+* A TestMu AI account
+* TestMu AI username and access key
 
-## Pre-requisites
+## Setup
 
-Before you can start performing App automation testing with Appium, you would need to follow these steps:
-
-- Download and install **NodeJS**. You should be having **NodeJS v6** or newer. Click [here](https://nodejs.org/en/) to download.
-- Make sure you are using the latest version of **JavaScript**.
-- Install **npm** from the official website by clicking [here](https://www.npmjs.com/).
-
-### Clone The Sample Project
-
-Clone the LambdaTest’s :link: [LT-appium-nodejs-webdriverio](https://github.com/LambdaTest/LT-appium-nodejs-webdriverio) repository and navigate to the code directory as shown below:
+Clone the repository and install the required dependencies:
 
 ```bash
 git clone https://github.com/LambdaTest/LT-appium-nodejs-webdriverio
 cd LT-appium-nodejs-webdriverio
+npm install
 ```
 
-### Setting Up Your Authentication
+## Configure Authentication
 
-Make sure you have your LambdaTest credentials with you to run test automation scripts on LambdaTest. To obtain your access credentials, [purchase a plan](https://billing.lambdatest.com/billing/plans/?utm_source=github&utm_medium=repo&utm_campaign=LT-appium-nodejs-webdriverio) or access the [Automation Dashboard](https://appautomation.lambdatest.com/?utm_source=github&utm_medium=repo&utm_campaign=LT-appium-nodejs-webdriverio).
+Set your TestMu AI username and access key as environment variables.
 
-Set LambdaTest `Username` and `Access Key` in environment variables.
+### Linux/macOS
 
-**For Linux/macOS:**
-
-```js
-export LT_USERNAME=YOUR_LAMBDATEST_USERNAME \
-export LT_ACCESS_KEY=YOUR_LAMBDATEST_ACCESS_KEY
+```bash
+export LT_USERNAME="YOUR_USERNAME"
+export LT_ACCESS_KEY="YOUR_ACCESS_KEY"
 ```
 
-**For Windows:**
+### Windows
 
-```js
-set LT_USERNAME=YOUR_LAMBDATEST_USERNAME `
-set LT_ACCESS_KEY=YOUR_LAMBDATEST_ACCESS_KEY
+```bash
+set LT_USERNAME="YOUR_USERNAME"
+set LT_ACCESS_KEY="YOUR_ACCESS_KEY"
 ```
 
-### Upload Your Application
+Note: Existing LambdaTest environment variable names (`LT_USERNAME` and `LT_ACCESS_KEY`) continue to be supported.
 
-Upload your ___iOS___ application (.ipa file) or ___android___ application (.apk file) to the LambdaTest servers using our __REST API__. You need to provide your __Username__ and __AccessKey__ in the format `Username:AccessKey` in the __cURL__ command for authentication. Make sure to add the path of the __appFile__ in the cURL request. Here is an example cURL request to upload your app using our REST API:
+## Upload Your Application
 
-**Using App File:**
+Upload your Android `.apk` or iOS `.ipa` application to the TestMu AI Real Device Cloud using the App Upload API.
 
-**For Linux/macOS:**
+The API uses your username and access key for authentication.
 
-```js
-curl -u "YOUR_LAMBDATEST_USERNAME:YOUR_LAMBDATEST_ACCESS_KEY" \
---location --request POST 'https://manual-api.lambdatest.com/app/upload/realDevice' \
+### Upload Using App File
+
+#### Linux/macOS
+
+```bash
+curl -u "YOUR_USERNAME:YOUR_ACCESS_KEY" \
+--location --request POST "https://manual-api.lambdatest.com/app/upload/realDevice" \
 --form 'name="Android_App"' \
---form 'appFile=@"/Users/macuser/Downloads/proverbial_android.apk"'
+--form 'appFile=@"/path/to/your/app.apk"'
 ```
 
-**For Windows:**
+#### Windows
 
-```js
-curl -u "YOUR_LAMBDATEST_USERNAME:YOUR_LAMBDATEST_ACCESS_KEY" -X POST "https://manual-api.lambdatest.com/app/upload/realDevice" -F "appFile=@"/Users/macuser/Downloads/proverbial_android.apk""
+```bash
+curl -u "YOUR_USERNAME:YOUR_ACCESS_KEY" \
+-X POST "https://manual-api.lambdatest.com/app/upload/realDevice" \
+-F "appFile=@C:\path\to\your\app.apk"
 ```
 
-**Using App URL:**
+### Upload Using App URL
 
-**For Linux/macOS:**
-
-```js
-curl -u "YOUR_LAMBDATEST_USERNAME:YOUR_LAMBDATEST_ACCESS_KEY" \
---location --request POST 'https://manual-api.lambdatest.com/app/upload/realDevice' \
+```bash
+curl -u "YOUR_USERNAME:YOUR_ACCESS_KEY" \
+--location --request POST "https://manual-api.lambdatest.com/app/upload/realDevice" \
 --form 'name="Android_App"' \
---form 'url="https://prod-mobile-artefacts.lambdatest.com/assets/docs/proverbial_android.apk"'
+--form 'url="YOUR_APP_DOWNLOAD_URL"'
 ```
 
-**For Windows:**
+The API response contains an `App URL` in the following format:
 
-```js
-curl -u "YOUR_LAMBDATEST_USERNAME:YOUR_LAMBDATEST_ACCESS_KEY" -X POST "https://manual-api.lambdatest.com/app/upload/realDevice" -d "{"url":"https://prod-mobile-artefacts.lambdatest.com/assets/docs/proverbial_android.apk","name":"sample.apk"}"
+```text
+lt://APP123456789123456789
 ```
 
-**Tip:**
+Use this `APP_URL` in the `app` capability of your test configuration.
 
-- If you do not have any __.apk__ or __.ipa__ file, you can run your sample tests on LambdaTest by using our sample :link: [Android app](https://prod-mobile-artefacts.lambdatest.com/assets/docs/proverbial_android.apk) or sample :link: [iOS app](https://prod-mobile-artefacts.lambdatest.com/assets/docs/proverbial_ios.ipa).
-- Response of above cURL will be a **JSON** object containing the `App URL` of the format - <lt://APP123456789123456789> and will be used in the next step.
+### Sample Applications
+
+If you do not have an APK or IPA file, you can use the sample applications:
+
+* [Sample Android App](https://prod-mobile-artefacts.lambdatest.com/assets/docs/proverbial_android.apk)
+* [Sample iOS App](https://prod-mobile-artefacts.lambdatest.com/assets/docs/proverbial_ios.ipa)
 
 ## Run Your First Test
 
-Once you are done with the above-mentioned steps, you can initiate your first WebDriverIO test on LambdaTest.
+The repository contains sample tests for both Android and iOS.
 
-**Test Scenario:** Check out [Android-test.js](https://github.com/LambdaTest/LT-appium-nodejs-webdriverio/blob/master/specs/android-test.js) file to view the sample test script for android and [iOS-test.js](https://github.com/LambdaTest/LT-appium-nodejs-webdriverio/blob/master/specs/ios-test.js) for iOS.
+* [Android Test](https://github.com/LambdaTest/LT-appium-nodejs-webdriverio/blob/master/specs/android-test.js)
+* [iOS Test](https://github.com/LambdaTest/LT-appium-nodejs-webdriverio/blob/master/specs/ios-test.js)
 
-### Configuring Your Test Capabilities
+## Configure Test Capabilities
 
-You need to update your capabilities in `*.config.js` files. In this sample project, we have provided the examples for running tests on both **Android** and **iOS** apps. You can find the configs for both iOS and Android in the `iOS-sample` and `android-sample` directories correspondingly. We are passing platform name, platform version, device name and app url (generated earlier) along with other capabilities like build name and test name via capabilities object. You need to pass the path of your test script in `specs` object to run your own automation script. The capabilities object in the sample code for a single test are defined as:
+Update the capabilities in the respective configuration files before running your tests.
 
-<Tabs className="docs__val">
+The sample configuration includes:
 
-<TabItem value="ios-config" label="ios-single.conf.js" default>
+* Platform name
+* Platform version
+* Device name
+* Application URL
+* Build name
+* Test name
+
+### iOS Configuration
 
 ```javascript
 exports.config = {
@@ -133,11 +127,9 @@ exports.config = {
   key: process.env.LT_ACCESS_KEY || "YOUR_ACCESS_KEY",
 
   updateJob: false,
-  //highlight-next-line
-  specs: ["specs/ios-test.js"], //path of your test script
+  specs: ["specs/ios-test.js"],
   exclude: [],
 
-  //highlight-start
   capabilities: [
     {
       build: "NodeJS WebDriverIO iOS",
@@ -149,7 +141,6 @@ exports.config = {
       app: "YOUR_APP_URL",
     },
   ],
-  //highlight-end
 
   logLevel: "info",
   coloredLogs: true,
@@ -170,8 +161,7 @@ exports.config = {
 };
 ```
 
-</TabItem>
-<TabItem value="android-config" label="android-single.conf.js" default>
+### Android Configuration
 
 ```javascript
 exports.config = {
@@ -179,11 +169,9 @@ exports.config = {
   key: process.env.LT_ACCESS_KEY || "YOUR_ACCESS_KEY",
 
   updateJob: false,
-  //highlight-next-line
-  specs: ["specs/android-test.js"], //path of your test script
+  specs: ["specs/android-test.js"],
   exclude: [],
 
-  //highlight-start
   capabilities: [
     {
       build: "NodeJS WebDriverIO Android",
@@ -195,7 +183,6 @@ exports.config = {
       app: "YOUR_APP_URL",
     },
   ],
-  //highlight-end
 
   logLevel: "info",
   coloredLogs: true,
@@ -216,105 +203,67 @@ exports.config = {
 };
 ```
 
-</TabItem>
+Important: Replace `YOUR_APP_URL` with the `App URL` generated after uploading your application.
 
-</Tabs>
+You can also generate capabilities using the [TestMu AI Capabilities Generator](https://www.lambdatest.com/capabilities-generator/).
 
-**Info Note:**
+For detailed Appium capabilities, refer to the [Appium Capabilities Guide](https://www.lambdatest.com/support/docs/desired-capabilities-in-appium/).
 
-- You must add the generated __APP_URL__ to the `"app"` capability in the config file.
-- You can generate capabilities for your test requirements with the help of our inbuilt :link: __[Capabilities Generator tool](https://www.lambdatest.com/capabilities-generator/)__. A more Detailed Capability Guide is available [here :page_facing_up:](https://www.lambdatest.com/support/docs/desired-capabilities-in-appium/) .
+## Execute Tests
 
-## Executing The Tests
-
-**Step-5:** To Run Android Test
-
-```bash
-cd android-sample
-```
-
-**Step-6:** Install the required dependencies using the following command:
-
-```bash
-npm i
-```
-
-**Step-7:** Execute the following command to run your test on LambdaTest platform:
-
-**Single:**
-
-- *MacOS/Linux*/Windows*
+### Run a Single Android App Test
 
 ```bash
 npm run SingleAndroidApp
 ```
 
-**Parallel:**
+### Run a Single Web Test on an Android Device
 
-- *MacOS/Linux*/Windows*
+```bash
+npm run SingleAndroidWeb
+```
+
+### Run Parallel Web Tests on Android Devices
+
+```bash
+npm run parallelWeb
+```
+
+### Run Parallel App Tests
 
 ```bash
 npm run parallel
 ```
 
-__Info:__ Your test results would be displayed on the test console (or command-line interface if you are using terminal/cmd) and on the :link: [LambdaTest App Automation Dashboard](https://appautomation.lambdatest.com/build/?utm_source=github&utm_medium=repo&utm_campaign=LT-appium-nodejs-webdriverio).
+After execution, you can view your test results in the TestMu AI dashboard.
 
-```bash
-To run single web Test on android Device: npm run SingleAndroidWeb
+## Local Testing with TestMu AI Tunnel
+
+If your application or test environment is hosted locally or behind a firewall, you can use TestMu AI Tunnel for local testing.
+
+Refer to the OS-specific guides:
+
+* [Local Testing on Windows](https://www.testmuai.com/support/docs/local-testing-for-windows/)
+* [Local Testing on macOS](https://www.testmuai.com/support/docs/local-testing-for-macos/)
+* [Local Testing on Linux](https://www.testmuai.com/support/docs/local-testing-for-linux/)
+
+Add the following capability to your test configuration:
+
+```javascript
+tunnel: true,
 ```
 
-```bash
-To run Parallel web Test on android devices: npm run parallelWeb
-```
+## Useful Links
 
-## Additional Links
+* [TestMu AI Documentation](https://www.testmuai.com/support/docs/)
+* [Appium Capabilities Guide](https://www.lambdatest.com/support/docs/desired-capabilities-in-appium/)
+* [Local Testing Documentation](https://www.lambdatest.com/support/docs/testing-locally-hosted-pages/)
+* [CI/CD Integrations](https://www.lambdatest.com/support/docs/integrations-with-ci-cd-tools/)
 
-```bash
+## Support
 
-```
+For assistance, contact the TestMu AI Support team or use the 24/7 chat support available on the platform.
 
-- [Advanced Configuration for Capabilities](https://www.lambdatest.com/support/docs/desired-capabilities-in-appium/)
-- [How to test locally hosted apps](https://www.lambdatest.com/support/docs/testing-locally-hosted-pages/)
-- [How to integrate LambdaTest with CI/CD](https://www.lambdatest.com/support/docs/integrations-with-ci-cd-tools/)
-
-## Documentation & Resources :books:
-
-Visit the following links to learn more about LambdaTest's features, setup and tutorials around test automation, mobile app testing, responsive testing, and manual testing.
-
-- [LambdaTest Documentation](https://www.lambdatest.com/support/docs/?utm_source=github&utm_medium=repo&utm_campaign=LT-appium-nodejs-webdriverio)
-- [LambdaTest Blog](https://www.lambdatest.com/blog/?utm_source=github&utm_medium=repo&utm_campaign=LT-appium-nodejs-webdriverio)
-- [LambdaTest Learning Hub](https://www.lambdatest.com/learning-hub/?utm_source=github&utm_medium=repo&utm_campaign=LT-appium-nodejs-webdriverio)
-
-## LambdaTest Community :busts_in_silhouette:
-
-The [LambdaTest Community](https://community.lambdatest.com/?utm_source=github&utm_medium=repo&utm_campaign=LT-appium-nodejs-webdriverio) allows people to interact with tech enthusiasts. Connect, ask questions, and learn from tech-savvy people. Discuss best practises in web development, testing, and DevOps with professionals from across the globe 🌎
-
-## What's New At LambdaTest ❓
-
-To stay updated with the latest features and product add-ons, visit [Changelog](https://changelog.lambdatest.com/)
-
-## About LambdaTest
-
-[LambdaTest](https://www.lambdatest.com/?utm_source=github&utm_medium=repo&utm_campaign=LT-appium-nodejs-webdriverio) is a leading test execution and orchestration platform that is fast, reliable, scalable, and secure. It allows users to run both manual and automated testing of web and mobile apps across 3000+ different browsers, operating systems, and real device combinations. Using LambdaTest, businesses can ensure quicker developer feedback and hence achieve faster go to market. Over 500 enterprises and 1 Million + users across 130+ countries rely on LambdaTest for their testing needs.
-
-### Features
-
-- Run Selenium, Cypress, Puppeteer, Playwright, and Appium automation tests across 3000+ real desktop and mobile environments.
-- Real-time cross browser testing on 3000+ environments.
-- Test on Real device cloud
-- Blazing fast test automation with HyperExecute
-- Accelerate testing, shorten job times and get faster feedback on code changes with Test At Scale.
-- Smart Visual Regression Testing on cloud
-- 120+ third-party integrations with your favorite tool for CI/CD, Project Management, Codeless Automation, and more.
-- Automated Screenshot testing across multiple browsers in a single click.
-- Local testing of web and mobile apps.
-- Online Accessibility Testing across 3000+ desktop and mobile browsers, browser versions, and operating systems.
-- Geolocation testing of web and mobile apps across 53+ countries.
-- LT Browser - for responsive testing across 50+ pre-installed mobile, tablets, desktop, and laptop viewports
-
-[<img height="53" width="200" src="https://user-images.githubusercontent.com/70570645/171866795-52c11b49-0728-4229-b073-4b704209ddde.png">](https://accounts.lambdatest.com/register)
-
-## We are here to help you :headphones:
-
-- Got a query? we are available 24x7 to help. [Contact Us](mailto:support@lambdatest.com/?utm_source=github&utm_medium=repo&utm_campaign=LT-appium-nodejs-webdriverio)
-- For more info, visit - [LambdaTest](https://www.lambdatest.com/?utm_source=github&utm_medium=repo&utm_campaign=LT-appium-nodejs-webdriverio)
+* [TestMu AI](https://www.testmuai.com/)
+* [TestMu AI Documentation](https://www.testmuai.com/support/docs/)
+* [TestMu AI Community](https://community.testmuai.com/)
