@@ -3,21 +3,19 @@ exports.config = {
     key: process.env.LT_ACCESS_KEY || "YOUR_ACCESS_KEY",
   
     updateJob: false,
-    specs: ["./../specs/android-web-test.js"],
+    specs: ["../../specs/android-web-test.js"],
     exclude: [],
-  
-    commonCapabilities: {
-      build: "LT_Appium_NodeJS_WebDriverIO_ltoptions_w3_Web_Automation",
-      visual: true,
-    },
   
     capabilities: [
       {
+        "platformName": "Android",
         "lt:options": {
-          platformName: "Android",
           deviceName: ".*",
-          name: "android_ltOptions_w3c",
+          platformVersion: "13",
+          name: "android_ltOptions_w3c_web",
           isRealMobile: true,
+          build: "LT_Appium_NodeJS_WebDriverIO_ltoptions_w3_Web_Automation",
+          visual: true,
           enableCustomTranslation: true,
           w3c: true,
         }
@@ -32,7 +30,7 @@ exports.config = {
     connectionRetryTimeout: 90000,
     connectionRetryCount: 3,
     path: "/wd/hub",
-    hostname: process.env.LT_GRID_URL||"mobile-hub.lambdatest.com",
+    hostname: process.env.LT_GRID_URL || "mobile-hub.lambdatest.com",
     port: 80,
   
     framework: "mocha",
@@ -40,10 +38,4 @@ exports.config = {
       ui: "bdd",
       timeout: 20000,
     },
-  };
-  
-  exports.config.capabilities.forEach(function (caps) {
-    for (var i in exports.config.commonCapabilities)
-      caps[i] = caps[i] || exports.config.commonCapabilities[i];
-  });
-  
+};

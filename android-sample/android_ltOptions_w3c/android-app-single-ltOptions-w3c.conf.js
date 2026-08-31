@@ -3,23 +3,21 @@ exports.config = {
     key: process.env.LT_ACCESS_KEY || "YOUR_ACCESS_KEY",
   
     updateJob: false,
-    specs: ["./../specs/android-test.js"],
+    specs: ["../../specs/android-test.js"],
     exclude: [],
-  
-    commonCapabilities: {
-      build: "LT_Appium_NodeJS_WebDriverIO_ltoptions_w3_App_Automation",
-      devicelog: true,
-      visual: true,  
-    },
   
     capabilities: [
       {
+        "platformName": "Android",
         "lt:options": {
           deviceName: ".*",
+          platformVersion: "13",
           name: "android_ltOptions",
           isRealMobile: true,
-          app: process.env.LT_APP_ID||"lt://proverbial-android",
-          platformName: "Android",
+          app: process.env.LT_APP_ID || "lt://proverbial-android",
+          build: "LT_Appium_NodeJS_WebDriverIO_ltoptions_w3_App_Automation",
+          devicelog: true,
+          visual: true,
           enableCustomTranslation: true,
         }
       },
@@ -33,7 +31,7 @@ exports.config = {
     connectionRetryTimeout: 90000,
     connectionRetryCount: 3,
     path: "/wd/hub",
-    hostname: process.env.LT_GRID_URL||"mobile-hub.lambdatest.com",
+    hostname: process.env.LT_GRID_URL || "mobile-hub.lambdatest.com",
     port: 80,
   
     framework: "mocha",
@@ -41,10 +39,4 @@ exports.config = {
       ui: "bdd",
       timeout: 20000,
     },
-  };
-  
-  exports.config.capabilities.forEach(function (caps) {
-    for (var i in exports.config.commonCapabilities)
-      caps[i] = caps[i] || exports.config.commonCapabilities[i];
-  });
-  
+};
