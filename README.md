@@ -1,5 +1,7 @@
 # Run Appium Tests with Node.js and WebDriverIO on TestMu AI (Formerly LambdaTest)
 
+> Automated End-to-End (E2E) testing of mobile apps with Appium, Node.js, and WebdriverIO across real devices and operating systems on TestMu AI.
+
 <p align="center">
   <a href="https://www.testmuai.com/"><img src="https://img.shields.io/badge/MADE%20BY%20TestMu%20AI-000000.svg?style=for-the-badge&labelColor=000" alt="Made by TestMu AI"></a>
   <a href="https://www.npmjs.com/package/webdriverio"><img src="https://img.shields.io/npm/v/webdriverio.svg?style=for-the-badge&labelColor=000000" alt="WebDriverIO version"></a>
